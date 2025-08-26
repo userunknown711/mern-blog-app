@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  height: 100vh;
+}
+
+/* Global enhancements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --ring: 0 0% 100% / 0.08;
+  --surface: 255 255 255;
+  --background: 248 250 252;
+  --text: 15 23 42;
+}
+
+::selection {
+  background: rgb(124 58 237 / 0.18);
+}
+
+/* Decorative background helpers */
+.bg-grid-slate {
+  background-image: linear-gradient(to right, rgb(15 23 42 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(15 23 42 / 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .bg-grid-slate {
+  background-image: linear-gradient(to right, rgb(148 163 184 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(148 163 184 / 0.06) 1px, transparent 1px);
+}
+
+.bg-radial-fade {
+  background-image: radial-gradient(1000px 400px at 10% -10%, rgb(124 58 237 / 0.12), transparent), radial-gradient(800px 300px at 90% 10%, rgb(99 102 241 / 0.1), transparent);
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+/* Tailwind plugin targets for scrollbar */
+.dark .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+}
+
+.dark .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+  background-color: rgb(51 65 85 / 1);
+}
+
+.ql-editor {
+  font-size: 1.05rem;
+}
+
+.post-content p {
+  margin-bottom: 0.5rem;
+}
+
+.post-content h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin: 1.5rem 0;
+}
+.post-content h2 {
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  margin: 1.5rem 0;
+}
+
+.post-content ul li {
+  margin: 1.15rem 0;
+  margin-left: 1.3rem;
+  list-style-type: circle;
+}
+
+.post-content ol li {
+  margin: 1.15rem 0;
+  margin-left: 1.3rem;
+  list-style-type: decimal;
+}
+
+.post-content a {
+  /* light blue */
+  color: rgb(73, 149, 199);
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
+.post-content pre {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(61, 69, 83);
+  color: rgb(232, 231, 231);
+  white-space: pre-wrap;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-content code {
+  background-color: rgb(236, 236, 236);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.dark .post-content code {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(61, 69, 83);
+}
+
+/* Prose tweaks for Quill and markdown content */
+.post-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.post-content blockquote {
+  border-left: 4px solid rgb(124 58 237);
+  padding-left: 0.75rem;
+  color: rgb(100 116 139);
+  margin: 1rem 0;
+}
+
+.dark .post-content blockquote {
+  color: rgb(148 163 184);
+}
+
+/* Focus rings for accessibility */
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900 rounded-lg;
+}
